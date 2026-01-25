@@ -62,6 +62,16 @@ Include specific examples of how to fix issues.
 - Missing caching
 - N+1 queries
 
+### React Native Performance
+
+- FlatList without keyExtractor or renderItem optimization
+- Missing removeClippedSubviews for long lists
+- Unoptimized images (no FastImage)
+- Inline styles instead of StyleSheet
+- Missing useNativeDriver in animations
+- Unnecessary Bridge calls
+- Large inline objects in render props
+
 ## Best Practices (MEDIUM)
 
 - Emoji usage in code/comments

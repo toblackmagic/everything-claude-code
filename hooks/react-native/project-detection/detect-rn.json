@@ -1,0 +1,11 @@
+{
+  "id": "react-native-detection",
+  "matcher": "tool == \"Bash\" && tool_input.command matches \"^(npm|yarn|pnpm|bun) (install|add|dev)\"",
+  "hooks": [
+    {
+      "type": "command",
+      "command": "node /Users/sc/workspace/claude-code/everything-claude-code/scripts/hooks/detect-rn-project.js",
+      "when": "before"
+    }
+  ]
+}

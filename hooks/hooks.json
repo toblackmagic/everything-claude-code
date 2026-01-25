@@ -13,6 +13,16 @@
         "description": "Block dev servers outside tmux - ensures you can access logs"
       },
       {
+        "matcher": "tool == \"Bash\" && tool_input.command matches \"^(npm|yarn|pnpm|bun) (install|add)\"",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/hooks/detect-rn-project.js\""
+          }
+        ],
+        "description": "Detect React Native projects and show available commands"
+      },
+      {
         "matcher": "tool == \"Bash\" && tool_input.command matches \"(npm (install|test)|pnpm (install|test)|yarn (install|test)?|bun (install|test)|cargo build|make|docker|pytest|vitest|playwright)\"",
         "hooks": [
           {

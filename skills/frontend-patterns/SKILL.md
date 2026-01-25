@@ -1,11 +1,57 @@
 ---
 name: frontend-patterns
-description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+description: Frontend development patterns for React, Next.js, React Native, state management, performance optimization, and UI best practices.
+tags: [web, mobile, react, nextjs]
+dependencies:
+  - coding-standards
 ---
 
 # Frontend Development Patterns
 
-Modern frontend patterns for React, Next.js, and performant user interfaces.
+Modern frontend patterns for React, Next.js, React Native, and performant user interfaces.
+
+## Platform Detection
+
+This skill covers **web frontend** patterns. When working with React Native projects, the `react-native-patterns` skill is automatically activated.
+
+### Detecting the Platform
+
+```typescript
+// Check if running in React Native
+const isReactNative = typeof navigator !== 'undefined' &&
+  navigator.product === 'ReactNative'
+
+// For component files, you can also check imports
+// import { View, Text } from 'react-native'  // ← React Native
+// import { View, Text } from './components'  // ← Web (usually)
+```
+
+### Platform-Specific Guidance
+
+| Pattern | Web (This Skill) | React Native (See `react-native-patterns`) |
+|---------|------------------|--------------------------------------------|
+| Components | `<div>`, `<span>`, HTML elements | `<View>`, `<Text>`, RN components |
+| Styling | CSS/Styled-components/Tailwind | StyleSheet, Platform-specific styles |
+| Navigation | React Router, Next.js | React Navigation |
+| Lists | Map, virtualized lists | FlatList, SectionList |
+| Forms | HTML forms, inputs | TextInput, RN-specific components |
+| State | Context, Redux, Zustand | Same (portable) |
+| Hooks | Same (portable) | Same (portable) |
+
+### Cross-Platform Patterns
+
+**The following patterns work in BOTH web and React Native:**
+- Custom Hooks (`useToggle`, `useQuery`, `useDebounce`)
+- State Management (Context, Reducer, Zustand, Redux)
+- Component Composition patterns
+- Render Props pattern
+- Error Boundaries (with minor adaptations)
+
+**Platform-specific implementations:**
+- Virtualization (Web: `@tanstack/react-virtual` → RN: `FlatList`)
+- Animations (Web: Framer Motion → RN: Animated API / Reanimated)
+- Forms (Web: HTML forms → RN: controlled TextInput)
+- Styling (Web: CSS → RN: StyleSheet)
 
 ## Component Patterns
 

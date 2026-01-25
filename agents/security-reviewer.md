@@ -123,6 +123,45 @@ For each category, check:
     - Are alerts configured?
 ```
 
+### 2.1. Mobile Security (React Native)
+
+When reviewing React Native applications, also check:
+
+#### Data Storage
+- Sensitive data in AsyncStorage (unencrypted)
+- Credentials in plain text
+- API keys hardcoded in JavaScript
+- PII stored without encryption
+- Database encryption disabled
+
+#### Network Security
+- API calls without certificate pinning
+- HTTP instead of HTTPS
+- Missing SSL validation
+- Deep link URLs not validated
+- Unencrypted WebSocket connections
+
+#### Device Security
+- Biometric authentication bypassed
+- Root/jailbreak detection missing
+- Screen capture allowed for sensitive screens
+- Clipboard access not secured
+- Background task exposes sensitive data
+
+#### Native Module Security
+- Unvalidated native bridge calls
+- Native modules expose sensitive APIs
+- WebView with JavaScript enabled
+- File scheme URLs not restricted
+- Intent/URL scheme hijacking
+
+#### Permissions
+- Overprivileged permissions requested
+- Runtime permissions not properly justified
+- Location data not minimized
+- Camera/microphone misuse
+- Contacts access without need
+
 ### 3. Example Project-Specific Security Checks
 
 **CRITICAL - Platform Handles Real Money:**

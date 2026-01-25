@@ -26,7 +26,12 @@
         "tdd",
         "code-review",
         "security",
-        "best-practices"
+        "best-practices",
+        "react-native",
+        "mobile",
+        "expo",
+        "ios",
+        "android"
       ],
       "category": "workflow",
       "tags": [
@@ -37,7 +42,12 @@
         "tdd",
         "code-review",
         "security",
-        "best-practices"
+        "best-practices",
+        "react-native",
+        "mobile",
+        "expo",
+        "ios",
+        "android"
       ]
     }
   ]
