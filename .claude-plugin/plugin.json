@@ -21,12 +21,7 @@
     "security",
     "workflow",
     "automation",
-    "best-practices",
-    "react-native",
-    "mobile",
-    "expo",
-    "ios",
-    "android"
+    "best-practices"
   ],
   "commands": ["./commands/"],
   "skills": ["./skills/"],
