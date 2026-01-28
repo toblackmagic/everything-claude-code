@@ -146,4 +146,52 @@ cd MyApp && npx pod-install  # iOS only
 
 ---
 
+## Agent Integration
+
+For React Native development, use the following commands:
+
+- **`/rn-test`** - TDD workflow for components and hooks
+- **`/frontend-review`** - React 通用审查（共享代码）
+- **`/rn-review`** - RN 特有审查（在 frontend-review 之后）
+- **`/rn-build`** - Build error resolution for Metro, iOS, and Android
+
+### When to Use Agents
+
+```bash
+# Implementing new features
+/rn-test → Write tests first (RED/GREEN/REFACTOR)
+
+# Before committing
+/frontend-review → Review React patterns (shared code)
+/rn-review → Review RN-specific issues
+
+# Build failures
+/rn-build → Fix Metro, iOS, or Android build errors
+```
+
+## Recommended Toolchain
+
+### Testing (Required)
+- `@testing-library/react-native` - Component testing
+- `@testing-library/jest-native` - Custom matchers
+- `react-test-renderer` - Snapshot testing
+
+### E2E Testing (Optional)
+- `Detox` - Gray-box E2E testing
+
+### Linting
+- ESLint with `@react-native-community/eslint-config`
+- TypeScript strict mode
+- `npx tsc --noEmit` for type checking
+
+### Performance Monitoring
+- `react-native-performance` for profiling
+- `react-native-flipper` for debugging
+
+### Development Tools
+- Expo: `npx expo start --clear`
+- React Native CLI: `npx react-native start --reset-cache`
+
+---
+
 **Remember**: React Native requires thinking mobile-first. Always consider platform differences, touch interactions, and mobile-specific UX patterns.

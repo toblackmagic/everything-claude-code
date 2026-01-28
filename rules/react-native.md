@@ -408,6 +408,52 @@ Before submitting PR, verify:
 - [ ] API calls use HTTPS
 - [ ] Event listeners are cleaned up
 
+## Agent Usage Rules
+
+React Native projects must use specialized agents for code quality and development workflow:
+
+### Required Commands
+
+- **`/rn-test`** - MUST be used when:
+  - Implementing new components or hooks
+  - Adding features to existing screens
+  - Fixing bugs (write failing test first)
+  - Building custom hooks
+
+- **`/frontend-review`** - MUST be used for:
+  - Reviewing React patterns (shared code)
+  - Reviewing hooks, components, TypeScript
+  - Code shared between web and mobile
+
+- **`/rn-review`** - MUST be used for:
+  - Reviewing RN-specific issues (Platform API, native modules)
+  - Reviewing FlatList optimization
+  - Reviewing mobile-specific security
+  - Use AFTER `/frontend-review` for complete review
+
+- **`/rn-build`** - MUST be used when:
+  - Metro bundler fails to start
+  - iOS build fails (pod install, Xcode)
+  - Android build fails (Gradle)
+  - TypeScript compilation errors
+
+### Development Workflow
+
+```text
+1. /rn-test → Write tests first (RED/GREEN/REFACTOR)
+2. Implement → Write minimal code to pass tests
+3. /frontend-review → Review React patterns (shared code)
+4. /rn-review → Review RN-specific issues
+5. /rn-build → Fix any build issues (if needed)
+6. Commit → Only when reviewers approve
+```
+
+### Approval Criteria
+
+- ✅ **Approve**: No CRITICAL or HIGH issues from `/frontend-review` or `/rn-review`
+- ⚠️ **Warning**: Only MEDIUM issues (merge with caution)
+- ❌ **Block**: CRITICAL or HIGH issues found from either reviewer - must fix before committing
+
 ---
 
 **Remember**: React Native is not web. Mobile devices have different constraints, performance characteristics, and security concerns. Always consider the mobile context when writing code.

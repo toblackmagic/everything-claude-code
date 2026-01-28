@@ -62,15 +62,11 @@ Include specific examples of how to fix issues.
 - Missing caching
 - N+1 queries
 
-### React Native Performance
+## Frontend Code
 
-- FlatList without keyExtractor or renderItem optimization
-- Missing removeClippedSubviews for long lists
-- Unoptimized images (no FastImage)
-- Inline styles instead of StyleSheet
-- Missing useNativeDriver in animations
-- Unnecessary Bridge calls
-- Large inline objects in render props
+For React/React Native code, use:
+- `frontend-reviewer` agent for shared React patterns
+- `rn-reviewer` agent for React Native-specific issues
 
 ## Best Practices (MEDIUM)
 
